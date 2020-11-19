@@ -1,10 +1,29 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+<div class='flex'>
+  <div class='flex mr-5'>
+    <!-- <SideBar /> -->
+    <Navigation />
   </div>
-  <router-view/>
+  <div class='flex w-full m-5 '>
+    <router-view class='w-full'/>
+  </div>
+</div>
 </template>
+
+<script>
+import './output.css';
+
+//import SideBar from './components/SideBar.vue';
+import Navigation from './components/Navigation.vue';
+
+
+export default {
+  name: 'App',
+  components: {
+    Navigation,
+  },
+};
+</script>
 
 <style>
 #app {
@@ -13,18 +32,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
