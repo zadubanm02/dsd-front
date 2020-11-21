@@ -24,6 +24,11 @@ const routes = [
     path:'/departments',
     name:'Departments',
     component:() => import('../views/Departments.vue'),
+  },
+  {
+    path:'/edit/:id',
+    name:'Edit',
+    component:() => import('../views/Edit.vue'),
   }
 ];
 

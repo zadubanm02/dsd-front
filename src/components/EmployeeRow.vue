@@ -36,7 +36,7 @@
       </span>
     </td>
     <td class="px-6 py-4 text-left text-sm leading-5 font-medium">
-      <a href="#" class="text-indigo-600 hover:text-indigo-900 m-3 p-3">Edit</a>
+   <a @click='navigate(id)' class="text-indigo-600 hover:text-indigo-900 m-3 p-3">Edit</a>
       <button class="m-3 text-red-600 hover:text-red-900" @click='remove(id)' >Delete</button>
     </td>
   </tr>
@@ -73,6 +73,9 @@ export default {
         axios.delete(`http://127.0.0.1:8000/api/v1/employees/${id}`)
         .then(()=>console.log('Successfuly deleted'))
         location.reload()
+    },
+    navigate(id){
+      this.$router.push({name:"Edit",params:{id:id}})
     }
   }
 };

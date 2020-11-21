@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="flex justify-between">
+  <div class="flex justify-between ">
         <NumberOfEmployees label='Employees Total' :number='numberOfEmployees'/>
         <div class="w-1/2 ml-4">
 						<div class="rounded-md p-6 bg-white shadow">
@@ -17,6 +17,8 @@
       <input class="rounded-full border py-1 pl-3 shadow-lg mr-3" placeholder='Search...' v-model="searchValue" />
       <button @click='search'>Search</button>
     </div>
+
+        
   <div class="flex flex-col">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 align-middle inline-block w-full sm:px-6 lg:px-8">
@@ -70,6 +72,8 @@
   </div>
 </template>
 
+
+
 <script>
 import EmployeeRow from "./EmployeeRow";
 import axios from 'axios';
@@ -79,6 +83,7 @@ import TotalSalary from './TotalSalary';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
 
 export default {
   name: "EmployeesTable",
